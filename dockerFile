@@ -1,0 +1,4 @@
+FROM java:8
+ADD target/imdp.jar imdp.jar
+EXPOSE 8011
+ENTRYPOINT ["java" , "-jar" , "imdp.jar"]
