@@ -26,8 +26,10 @@ pipeline {
         		}
     }
      stage('Push Docker Image'){
-        bat 'docker login -u omarkorbi -p gotktpas123'
-  		bat 'docker push omarkorbi/imdb:latest .'
+     	steps{
+	        bat 'docker login -u omarkorbi -p gotktpas123'
+	  		bat 'docker push omarkorbi/imdb:latest .'
+	  		}
     }
 		
 	}
