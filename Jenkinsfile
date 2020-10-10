@@ -19,15 +19,7 @@ pipeline {
 			}	
 				  }
 		}
-		stage('Testing') {
-			steps {
-			withMaven(maven : 'maven-3'){
-				
-				bat 'mvn test'
-				
-			}	
-				 }
-		}
+		
 		
 	}
 }
