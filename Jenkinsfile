@@ -13,18 +13,18 @@ pipeline {
 		stage('Compile') {
 			steps {
 			withMaven(maven : 'maven-3'){
-			withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) { 
-				sh 'mvn clean package'
-				}
+			
+				bat 'mvn clean package'
+				
 			}	
 				  }
 		}
 		stage('Testing') {
 			steps {
 			withMaven(maven : 'maven-3'){
-				withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) { 
-				sh 'mvn test'
-				}
+				
+				bat 'mvn test'
+				
 			}	
 				  }
 		}
