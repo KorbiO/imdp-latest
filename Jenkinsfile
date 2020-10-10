@@ -28,7 +28,8 @@ pipeline {
      stage('Push Docker Image'){
      	steps{
 	        bat 'docker login -u omarkorbi -p gotktpas123'
-	  		bat 'docker push omarkorbi/imdb:latest .'
+	  		bat 'docker tag imdp:latest omarkorbi/imdp '
+	  		bat 'docker push omarkorbi/imdp'
 	  		}
     }
 		
