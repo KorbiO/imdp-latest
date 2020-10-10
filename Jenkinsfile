@@ -3,6 +3,7 @@ pipeline {
 	tools {
     maven 'maven-3'
   }
+  
 	stages {
 		stage('SCM Checkout'){
 			steps{
@@ -12,14 +13,18 @@ pipeline {
 		stage('Compile') {
 			steps {
 			withMaven(maven : 'maven-3'){
+			withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) { 
 				sh 'mvn clean package'
+				}
 			}	
 				  }
 		}
 		stage('Testing') {
 			steps {
 			withMaven(maven : 'maven-3'){
+				withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) { 
 				sh 'mvn test'
+				}
 			}	
 				  }
 		}
