@@ -15,7 +15,7 @@ pipeline {
 			steps {
 			withMaven(maven : 'maven-3'){
 			
-				bat 'mvn clean package'
+				bat 'mvn -Dmaven.test.failure.ignoire=true clean package'
 				
 			}	
 				  }
