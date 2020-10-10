@@ -32,6 +32,11 @@ pipeline {
 	  		bat 'docker push omarkorbi/imdp'
 	  		}
     }
+    stage('Run Container on Dev Server'){
+    	steps{
+   	   		bat 'docker run -p 8761:8761 -d --name imdp omarkorbi/imdp:latest'
+   	   		}
+    }
 		
 	}
 }
