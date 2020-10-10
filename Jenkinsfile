@@ -26,7 +26,7 @@ pipeline {
 				bat 'mvn test'
 				
 			}	
-				  }
+				 }
 		}
 		
 	}
